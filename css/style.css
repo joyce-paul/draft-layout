@@ -1,0 +1,113 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/templates/modern-business)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(238,53,36);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    background-color: rgba(102,102,102,.9);
+    color: white;
+    text-decoration: none;
+}
+
+.quotestyle {
+    color: #666666;
+}
+
+.headline {
+    color: #EE3524;
+}
+
+.country {
+    font-size: 14px;
+    color: #666666;
+}
+
+.desc {
+    font-size: 16px;
+}
+
+.btn {
+    font-size: 11px;
+    color: white;
+    border-radius: 0;
+    border: 0;
+    background-color: silver;
+    padding: 1;
+    float: right;
+}
+
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#linkedin-contact:hover {
+    background-color: #F4F4F4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#facebook-contact:hover {
+    background-color: #F4F4F4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#twitter-contact:hover {
+    background-color: #F4F4F4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#podcast-contact:hover {
+    background-color: #F4F4F4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.py-4 {
+    font-size: 13px;
+    color: #666666;
+    background-color: #F4F4F4;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #EE3524;
+    margin-bottom: 0;
+}
+
+.staff-name {
+    color: #666666;
+}
+
+.email {
+    font-size: 16px;
+}
+
+.designation {
+    font-size: 16px;
+}
