@@ -1,326 +1,295 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Password Protected Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #dialogText {
-            padding: 10px 30px;
-            color: white;
-            background-color: #333333;
-        }
-        
-        #dialogWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: table;
-            background-color: #EEEEEE;
-        }
-        
-        #dialogWrapCell {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        #mainDialog {
-            max-width: 400px;
-            margin: 5px;
-            border: solid #AAAAAA 1px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px 3px #AAAAAA;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #FFFFFF;
-            overflow: hidden;
-            text-align: left;
-        }
-        #passArea {
-            padding: 20px 30px;
-            background-color: white;
-        }
-        #passArea > * {
-            margin: 5px auto;
-        }
-        #pass {
-            width: 100%;
-            height: 40px;
-            font-size: 30px;
-        }
-        
-        #messageWrapper {
-            float: left;
-            vertical-align: middle;
-            line-height: 30px;
-        }
-        
-        .notifyText {
-            display: none;
-        }
-        
-        #invalidPass {
-            color: red;
-        }
-        
-        #success {
-            color: green;
-        }
-        
-        #submitPass {
-            font-size: 20px;
-            border-radius: 5px;
-            background-color: #E7E7E7;
-            border: solid gray 1px;
-            float: right;
-        }
-        #contentFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        #attribution {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-        #attribution, #attribution a {
-            color: #999;
-        }
-    </style>
-  </head>
-  <body>
-    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
-    <div id="dialogWrap">
-        <div id="dialogWrapCell">
-            <div id="mainDialog">
-                <div id="dialogText">This page is password protected.</div>
-                <div id="passArea">
-                    <p id="passwordPrompt">Password</p>
-                    <input id="pass" type="password" name="pass">
-                    <div>
-                        <span id="messageWrapper">
-                            <span id="invalidPass" class="notifyText">Sorry, please try again.</span>
-                            <span id="success" class="notifyText">Success!</span>
-                            &nbsp;
-                        </span>
-                        <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-            </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="SHEVS IFT" content="">
+
+
+  <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" href="img/shevs-ift-logo.svg" type="image/svg" sizes="16x16">
+   <title>SHEVS IFT</title>
+</head>
+
+<body>
+
+
+  <!-- // NAVIGATION \\ -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="index.html">
+        <img class="shevs-logo" src="img/shevs-ift-logo.svg" width="130" height="auto" alt="">
+      </a>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <p class="navbar-toggler-icon"></p>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="industry-news.html">Industry News</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="interviews.html">Interviews</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="research.html">Research</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="featured-projects.html">Featured Projects</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+
+        </ul>
+      </div>
+  </nav>
+
+
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('img/fire.jpg')">
+          <div class="carousel-caption text-center">
+            <h1>Story 1</h1>
+            <p>Article on fire engineering</p>
+          </div>
         </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('img/smoke.jpg')">
+          <div class="carousel-caption text-center">
+            <h1>Story 2</h1>
+            <p>Article on smoke inhalation</p>
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('img/matchstick.jpg')">
+          <div class="carousel-caption text-center">
+            <h1>Story 3</h1>
+            <p>Another article</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <div id="attribution">
-        Protected by <a href="https://www.maxlaumeister.com/pagecrypt/">PageCrypt</a>
+  </header>
+
+
+  <!-- // PAGE CONTENT \\  -->
+<div class="container">
+<br>
+
+
+    <!-- // INDUSTRY NEWS SECTION \\  -->
+    <h5 class="headline">
+        <a id="industry-news">Industry News</a>
+    </h5>
+    <div class="row">
+      <div class="col-lg-6 col-sm-6 ">
+        <div class="card h-60">
+          <a href="industry-news.html"><img class="card-img-top" src="http://placehold.it/700x350" alt=""></a>
+          <div class="card-body">
+            <h5 class="card-title">
+            </h5>
+            <p class="card-text desc">Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. </p>
+            <div><a href="industry-news.html" class="btn">Read more</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-6 ">
+        <div class="card h-60">
+          <a href="industry-news.html"><img class="card-img-top" src="http://placehold.it/700x350" alt=""></a>
+          <div class="card-body">
+            <h5 class="card-title">
+            </h5>
+            <p class="card-text desc">Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. </p>
+            <div><a href="industry-news.html" class="btn">Read more</a></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script>
-/*
-CryptoJS v3.1.2
-code.google.com/p/crypto-js
-(c) 2009-2013 by Jeff Mott. All rights reserved.
-code.google.com/p/crypto-js/wiki/License
-*/
-var CryptoJS=CryptoJS||function(u,p){var d={},l=d.lib={},s=function(){},t=l.Base={extend:function(a){s.prototype=this;var c=new s;a&&c.mixIn(a);c.hasOwnProperty("init")||(c.init=function(){c.$super.init.apply(this,arguments)});c.init.prototype=c;c.$super=this;return c},create:function(){var a=this.extend();a.init.apply(a,arguments);return a},init:function(){},mixIn:function(a){for(var c in a)a.hasOwnProperty(c)&&(this[c]=a[c]);a.hasOwnProperty("toString")&&(this.toString=a.toString)},clone:function(){return this.init.prototype.extend(this)}},
-r=l.WordArray=t.extend({init:function(a,c){a=this.words=a||[];this.sigBytes=c!=p?c:4*a.length},toString:function(a){return(a||v).stringify(this)},concat:function(a){var c=this.words,e=a.words,j=this.sigBytes;a=a.sigBytes;this.clamp();if(j%4)for(var k=0;k<a;k++)c[j+k>>>2]|=(e[k>>>2]>>>24-8*(k%4)&255)<<24-8*((j+k)%4);else if(65535<e.length)for(k=0;k<a;k+=4)c[j+k>>>2]=e[k>>>2];else c.push.apply(c,e);this.sigBytes+=a;return this},clamp:function(){var a=this.words,c=this.sigBytes;a[c>>>2]&=4294967295<<
-32-8*(c%4);a.length=u.ceil(c/4)},clone:function(){var a=t.clone.call(this);a.words=this.words.slice(0);return a},random:function(a){for(var c=[],e=0;e<a;e+=4)c.push(4294967296*u.random()|0);return new r.init(c,a)}}),w=d.enc={},v=w.Hex={stringify:function(a){var c=a.words;a=a.sigBytes;for(var e=[],j=0;j<a;j++){var k=c[j>>>2]>>>24-8*(j%4)&255;e.push((k>>>4).toString(16));e.push((k&15).toString(16))}return e.join("")},parse:function(a){for(var c=a.length,e=[],j=0;j<c;j+=2)e[j>>>3]|=parseInt(a.substr(j,
-2),16)<<24-4*(j%8);return new r.init(e,c/2)}},b=w.Latin1={stringify:function(a){var c=a.words;a=a.sigBytes;for(var e=[],j=0;j<a;j++)e.push(String.fromCharCode(c[j>>>2]>>>24-8*(j%4)&255));return e.join("")},parse:function(a){for(var c=a.length,e=[],j=0;j<c;j++)e[j>>>2]|=(a.charCodeAt(j)&255)<<24-8*(j%4);return new r.init(e,c)}},x=w.Utf8={stringify:function(a){try{return decodeURIComponent(escape(b.stringify(a)))}catch(c){throw Error("Malformed UTF-8 data");}},parse:function(a){return b.parse(unescape(encodeURIComponent(a)))}},
-q=l.BufferedBlockAlgorithm=t.extend({reset:function(){this._data=new r.init;this._nDataBytes=0},_append:function(a){"string"==typeof a&&(a=x.parse(a));this._data.concat(a);this._nDataBytes+=a.sigBytes},_process:function(a){var c=this._data,e=c.words,j=c.sigBytes,k=this.blockSize,b=j/(4*k),b=a?u.ceil(b):u.max((b|0)-this._minBufferSize,0);a=b*k;j=u.min(4*a,j);if(a){for(var q=0;q<a;q+=k)this._doProcessBlock(e,q);q=e.splice(0,a);c.sigBytes-=j}return new r.init(q,j)},clone:function(){var a=t.clone.call(this);
-a._data=this._data.clone();return a},_minBufferSize:0});l.Hasher=q.extend({cfg:t.extend(),init:function(a){this.cfg=this.cfg.extend(a);this.reset()},reset:function(){q.reset.call(this);this._doReset()},update:function(a){this._append(a);this._process();return this},finalize:function(a){a&&this._append(a);return this._doFinalize()},blockSize:16,_createHelper:function(a){return function(b,e){return(new a.init(e)).finalize(b)}},_createHmacHelper:function(a){return function(b,e){return(new n.HMAC.init(a,
-e)).finalize(b)}}});var n=d.algo={};return d}(Math);
-(function(){var u=CryptoJS,p=u.lib.WordArray;u.enc.Base64={stringify:function(d){var l=d.words,p=d.sigBytes,t=this._map;d.clamp();d=[];for(var r=0;r<p;r+=3)for(var w=(l[r>>>2]>>>24-8*(r%4)&255)<<16|(l[r+1>>>2]>>>24-8*((r+1)%4)&255)<<8|l[r+2>>>2]>>>24-8*((r+2)%4)&255,v=0;4>v&&r+0.75*v<p;v++)d.push(t.charAt(w>>>6*(3-v)&63));if(l=t.charAt(64))for(;d.length%4;)d.push(l);return d.join("")},parse:function(d){var l=d.length,s=this._map,t=s.charAt(64);t&&(t=d.indexOf(t),-1!=t&&(l=t));for(var t=[],r=0,w=0;w<
-l;w++)if(w%4){var v=s.indexOf(d.charAt(w-1))<<2*(w%4),b=s.indexOf(d.charAt(w))>>>6-2*(w%4);t[r>>>2]|=(v|b)<<24-8*(r%4);r++}return p.create(t,r)},_map:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="}})();
-(function(u){function p(b,n,a,c,e,j,k){b=b+(n&a|~n&c)+e+k;return(b<<j|b>>>32-j)+n}function d(b,n,a,c,e,j,k){b=b+(n&c|a&~c)+e+k;return(b<<j|b>>>32-j)+n}function l(b,n,a,c,e,j,k){b=b+(n^a^c)+e+k;return(b<<j|b>>>32-j)+n}function s(b,n,a,c,e,j,k){b=b+(a^(n|~c))+e+k;return(b<<j|b>>>32-j)+n}for(var t=CryptoJS,r=t.lib,w=r.WordArray,v=r.Hasher,r=t.algo,b=[],x=0;64>x;x++)b[x]=4294967296*u.abs(u.sin(x+1))|0;r=r.MD5=v.extend({_doReset:function(){this._hash=new w.init([1732584193,4023233417,2562383102,271733878])},
-_doProcessBlock:function(q,n){for(var a=0;16>a;a++){var c=n+a,e=q[c];q[c]=(e<<8|e>>>24)&16711935|(e<<24|e>>>8)&4278255360}var a=this._hash.words,c=q[n+0],e=q[n+1],j=q[n+2],k=q[n+3],z=q[n+4],r=q[n+5],t=q[n+6],w=q[n+7],v=q[n+8],A=q[n+9],B=q[n+10],C=q[n+11],u=q[n+12],D=q[n+13],E=q[n+14],x=q[n+15],f=a[0],m=a[1],g=a[2],h=a[3],f=p(f,m,g,h,c,7,b[0]),h=p(h,f,m,g,e,12,b[1]),g=p(g,h,f,m,j,17,b[2]),m=p(m,g,h,f,k,22,b[3]),f=p(f,m,g,h,z,7,b[4]),h=p(h,f,m,g,r,12,b[5]),g=p(g,h,f,m,t,17,b[6]),m=p(m,g,h,f,w,22,b[7]),
-f=p(f,m,g,h,v,7,b[8]),h=p(h,f,m,g,A,12,b[9]),g=p(g,h,f,m,B,17,b[10]),m=p(m,g,h,f,C,22,b[11]),f=p(f,m,g,h,u,7,b[12]),h=p(h,f,m,g,D,12,b[13]),g=p(g,h,f,m,E,17,b[14]),m=p(m,g,h,f,x,22,b[15]),f=d(f,m,g,h,e,5,b[16]),h=d(h,f,m,g,t,9,b[17]),g=d(g,h,f,m,C,14,b[18]),m=d(m,g,h,f,c,20,b[19]),f=d(f,m,g,h,r,5,b[20]),h=d(h,f,m,g,B,9,b[21]),g=d(g,h,f,m,x,14,b[22]),m=d(m,g,h,f,z,20,b[23]),f=d(f,m,g,h,A,5,b[24]),h=d(h,f,m,g,E,9,b[25]),g=d(g,h,f,m,k,14,b[26]),m=d(m,g,h,f,v,20,b[27]),f=d(f,m,g,h,D,5,b[28]),h=d(h,f,
-m,g,j,9,b[29]),g=d(g,h,f,m,w,14,b[30]),m=d(m,g,h,f,u,20,b[31]),f=l(f,m,g,h,r,4,b[32]),h=l(h,f,m,g,v,11,b[33]),g=l(g,h,f,m,C,16,b[34]),m=l(m,g,h,f,E,23,b[35]),f=l(f,m,g,h,e,4,b[36]),h=l(h,f,m,g,z,11,b[37]),g=l(g,h,f,m,w,16,b[38]),m=l(m,g,h,f,B,23,b[39]),f=l(f,m,g,h,D,4,b[40]),h=l(h,f,m,g,c,11,b[41]),g=l(g,h,f,m,k,16,b[42]),m=l(m,g,h,f,t,23,b[43]),f=l(f,m,g,h,A,4,b[44]),h=l(h,f,m,g,u,11,b[45]),g=l(g,h,f,m,x,16,b[46]),m=l(m,g,h,f,j,23,b[47]),f=s(f,m,g,h,c,6,b[48]),h=s(h,f,m,g,w,10,b[49]),g=s(g,h,f,m,
-E,15,b[50]),m=s(m,g,h,f,r,21,b[51]),f=s(f,m,g,h,u,6,b[52]),h=s(h,f,m,g,k,10,b[53]),g=s(g,h,f,m,B,15,b[54]),m=s(m,g,h,f,e,21,b[55]),f=s(f,m,g,h,v,6,b[56]),h=s(h,f,m,g,x,10,b[57]),g=s(g,h,f,m,t,15,b[58]),m=s(m,g,h,f,D,21,b[59]),f=s(f,m,g,h,z,6,b[60]),h=s(h,f,m,g,C,10,b[61]),g=s(g,h,f,m,j,15,b[62]),m=s(m,g,h,f,A,21,b[63]);a[0]=a[0]+f|0;a[1]=a[1]+m|0;a[2]=a[2]+g|0;a[3]=a[3]+h|0},_doFinalize:function(){var b=this._data,n=b.words,a=8*this._nDataBytes,c=8*b.sigBytes;n[c>>>5]|=128<<24-c%32;var e=u.floor(a/
-4294967296);n[(c+64>>>9<<4)+15]=(e<<8|e>>>24)&16711935|(e<<24|e>>>8)&4278255360;n[(c+64>>>9<<4)+14]=(a<<8|a>>>24)&16711935|(a<<24|a>>>8)&4278255360;b.sigBytes=4*(n.length+1);this._process();b=this._hash;n=b.words;for(a=0;4>a;a++)c=n[a],n[a]=(c<<8|c>>>24)&16711935|(c<<24|c>>>8)&4278255360;return b},clone:function(){var b=v.clone.call(this);b._hash=this._hash.clone();return b}});t.MD5=v._createHelper(r);t.HmacMD5=v._createHmacHelper(r)})(Math);
-(function(){var u=CryptoJS,p=u.lib,d=p.Base,l=p.WordArray,p=u.algo,s=p.EvpKDF=d.extend({cfg:d.extend({keySize:4,hasher:p.MD5,iterations:1}),init:function(d){this.cfg=this.cfg.extend(d)},compute:function(d,r){for(var p=this.cfg,s=p.hasher.create(),b=l.create(),u=b.words,q=p.keySize,p=p.iterations;u.length<q;){n&&s.update(n);var n=s.update(d).finalize(r);s.reset();for(var a=1;a<p;a++)n=s.finalize(n),s.reset();b.concat(n)}b.sigBytes=4*q;return b}});u.EvpKDF=function(d,l,p){return s.create(p).compute(d,
-l)}})();
-CryptoJS.lib.Cipher||function(u){var p=CryptoJS,d=p.lib,l=d.Base,s=d.WordArray,t=d.BufferedBlockAlgorithm,r=p.enc.Base64,w=p.algo.EvpKDF,v=d.Cipher=t.extend({cfg:l.extend(),createEncryptor:function(e,a){return this.create(this._ENC_XFORM_MODE,e,a)},createDecryptor:function(e,a){return this.create(this._DEC_XFORM_MODE,e,a)},init:function(e,a,b){this.cfg=this.cfg.extend(b);this._xformMode=e;this._key=a;this.reset()},reset:function(){t.reset.call(this);this._doReset()},process:function(e){this._append(e);return this._process()},
-finalize:function(e){e&&this._append(e);return this._doFinalize()},keySize:4,ivSize:4,_ENC_XFORM_MODE:1,_DEC_XFORM_MODE:2,_createHelper:function(e){return{encrypt:function(b,k,d){return("string"==typeof k?c:a).encrypt(e,b,k,d)},decrypt:function(b,k,d){return("string"==typeof k?c:a).decrypt(e,b,k,d)}}}});d.StreamCipher=v.extend({_doFinalize:function(){return this._process(!0)},blockSize:1});var b=p.mode={},x=function(e,a,b){var c=this._iv;c?this._iv=u:c=this._prevBlock;for(var d=0;d<b;d++)e[a+d]^=
-c[d]},q=(d.BlockCipherMode=l.extend({createEncryptor:function(e,a){return this.Encryptor.create(e,a)},createDecryptor:function(e,a){return this.Decryptor.create(e,a)},init:function(e,a){this._cipher=e;this._iv=a}})).extend();q.Encryptor=q.extend({processBlock:function(e,a){var b=this._cipher,c=b.blockSize;x.call(this,e,a,c);b.encryptBlock(e,a);this._prevBlock=e.slice(a,a+c)}});q.Decryptor=q.extend({processBlock:function(e,a){var b=this._cipher,c=b.blockSize,d=e.slice(a,a+c);b.decryptBlock(e,a);x.call(this,
-e,a,c);this._prevBlock=d}});b=b.CBC=q;q=(p.pad={}).Pkcs7={pad:function(a,b){for(var c=4*b,c=c-a.sigBytes%c,d=c<<24|c<<16|c<<8|c,l=[],n=0;n<c;n+=4)l.push(d);c=s.create(l,c);a.concat(c)},unpad:function(a){a.sigBytes-=a.words[a.sigBytes-1>>>2]&255}};d.BlockCipher=v.extend({cfg:v.cfg.extend({mode:b,padding:q}),reset:function(){v.reset.call(this);var a=this.cfg,b=a.iv,a=a.mode;if(this._xformMode==this._ENC_XFORM_MODE)var c=a.createEncryptor;else c=a.createDecryptor,this._minBufferSize=1;this._mode=c.call(a,
-this,b&&b.words)},_doProcessBlock:function(a,b){this._mode.processBlock(a,b)},_doFinalize:function(){var a=this.cfg.padding;if(this._xformMode==this._ENC_XFORM_MODE){a.pad(this._data,this.blockSize);var b=this._process(!0)}else b=this._process(!0),a.unpad(b);return b},blockSize:4});var n=d.CipherParams=l.extend({init:function(a){this.mixIn(a)},toString:function(a){return(a||this.formatter).stringify(this)}}),b=(p.format={}).OpenSSL={stringify:function(a){var b=a.ciphertext;a=a.salt;return(a?s.create([1398893684,
-1701076831]).concat(a).concat(b):b).toString(r)},parse:function(a){a=r.parse(a);var b=a.words;if(1398893684==b[0]&&1701076831==b[1]){var c=s.create(b.slice(2,4));b.splice(0,4);a.sigBytes-=16}return n.create({ciphertext:a,salt:c})}},a=d.SerializableCipher=l.extend({cfg:l.extend({format:b}),encrypt:function(a,b,c,d){d=this.cfg.extend(d);var l=a.createEncryptor(c,d);b=l.finalize(b);l=l.cfg;return n.create({ciphertext:b,key:c,iv:l.iv,algorithm:a,mode:l.mode,padding:l.padding,blockSize:a.blockSize,formatter:d.format})},
-decrypt:function(a,b,c,d){d=this.cfg.extend(d);b=this._parse(b,d.format);return a.createDecryptor(c,d).finalize(b.ciphertext)},_parse:function(a,b){return"string"==typeof a?b.parse(a,this):a}}),p=(p.kdf={}).OpenSSL={execute:function(a,b,c,d){d||(d=s.random(8));a=w.create({keySize:b+c}).compute(a,d);c=s.create(a.words.slice(b),4*c);a.sigBytes=4*b;return n.create({key:a,iv:c,salt:d})}},c=d.PasswordBasedCipher=a.extend({cfg:a.cfg.extend({kdf:p}),encrypt:function(b,c,d,l){l=this.cfg.extend(l);d=l.kdf.execute(d,
-b.keySize,b.ivSize);l.iv=d.iv;b=a.encrypt.call(this,b,c,d.key,l);b.mixIn(d);return b},decrypt:function(b,c,d,l){l=this.cfg.extend(l);c=this._parse(c,l.format);d=l.kdf.execute(d,b.keySize,b.ivSize,c.salt);l.iv=d.iv;return a.decrypt.call(this,b,c,d.key,l)}})}();
-(function(){for(var u=CryptoJS,p=u.lib.BlockCipher,d=u.algo,l=[],s=[],t=[],r=[],w=[],v=[],b=[],x=[],q=[],n=[],a=[],c=0;256>c;c++)a[c]=128>c?c<<1:c<<1^283;for(var e=0,j=0,c=0;256>c;c++){var k=j^j<<1^j<<2^j<<3^j<<4,k=k>>>8^k&255^99;l[e]=k;s[k]=e;var z=a[e],F=a[z],G=a[F],y=257*a[k]^16843008*k;t[e]=y<<24|y>>>8;r[e]=y<<16|y>>>16;w[e]=y<<8|y>>>24;v[e]=y;y=16843009*G^65537*F^257*z^16843008*e;b[k]=y<<24|y>>>8;x[k]=y<<16|y>>>16;q[k]=y<<8|y>>>24;n[k]=y;e?(e=z^a[a[a[G^z]]],j^=a[a[j]]):e=j=1}var H=[0,1,2,4,8,
-16,32,64,128,27,54],d=d.AES=p.extend({_doReset:function(){for(var a=this._key,c=a.words,d=a.sigBytes/4,a=4*((this._nRounds=d+6)+1),e=this._keySchedule=[],j=0;j<a;j++)if(j<d)e[j]=c[j];else{var k=e[j-1];j%d?6<d&&4==j%d&&(k=l[k>>>24]<<24|l[k>>>16&255]<<16|l[k>>>8&255]<<8|l[k&255]):(k=k<<8|k>>>24,k=l[k>>>24]<<24|l[k>>>16&255]<<16|l[k>>>8&255]<<8|l[k&255],k^=H[j/d|0]<<24);e[j]=e[j-d]^k}c=this._invKeySchedule=[];for(d=0;d<a;d++)j=a-d,k=d%4?e[j]:e[j-4],c[d]=4>d||4>=j?k:b[l[k>>>24]]^x[l[k>>>16&255]]^q[l[k>>>
-8&255]]^n[l[k&255]]},encryptBlock:function(a,b){this._doCryptBlock(a,b,this._keySchedule,t,r,w,v,l)},decryptBlock:function(a,c){var d=a[c+1];a[c+1]=a[c+3];a[c+3]=d;this._doCryptBlock(a,c,this._invKeySchedule,b,x,q,n,s);d=a[c+1];a[c+1]=a[c+3];a[c+3]=d},_doCryptBlock:function(a,b,c,d,e,j,l,f){for(var m=this._nRounds,g=a[b]^c[0],h=a[b+1]^c[1],k=a[b+2]^c[2],n=a[b+3]^c[3],p=4,r=1;r<m;r++)var q=d[g>>>24]^e[h>>>16&255]^j[k>>>8&255]^l[n&255]^c[p++],s=d[h>>>24]^e[k>>>16&255]^j[n>>>8&255]^l[g&255]^c[p++],t=
-d[k>>>24]^e[n>>>16&255]^j[g>>>8&255]^l[h&255]^c[p++],n=d[n>>>24]^e[g>>>16&255]^j[h>>>8&255]^l[k&255]^c[p++],g=q,h=s,k=t;q=(f[g>>>24]<<24|f[h>>>16&255]<<16|f[k>>>8&255]<<8|f[n&255])^c[p++];s=(f[h>>>24]<<24|f[k>>>16&255]<<16|f[n>>>8&255]<<8|f[g&255])^c[p++];t=(f[k>>>24]<<24|f[n>>>16&255]<<16|f[g>>>8&255]<<8|f[h&255])^c[p++];n=(f[n>>>24]<<24|f[g>>>16&255]<<16|f[h>>>8&255]<<8|f[k&255])^c[p++];a[b]=q;a[b+1]=s;a[b+2]=t;a[b+3]=n},keySize:8});u.AES=p._createHelper(d)})();
-    </script>
-    <script>
-/*
-CryptoJS v3.1.2
-code.google.com/p/crypto-js
-(c) 2009-2013 by Jeff Mott. All rights reserved.
-code.google.com/p/crypto-js/wiki/License
-*/
-var CryptoJS=CryptoJS||function(g,j){var e={},d=e.lib={},m=function(){},n=d.Base={extend:function(a){m.prototype=this;var c=new m;a&&c.mixIn(a);c.hasOwnProperty("init")||(c.init=function(){c.$super.init.apply(this,arguments)});c.init.prototype=c;c.$super=this;return c},create:function(){var a=this.extend();a.init.apply(a,arguments);return a},init:function(){},mixIn:function(a){for(var c in a)a.hasOwnProperty(c)&&(this[c]=a[c]);a.hasOwnProperty("toString")&&(this.toString=a.toString)},clone:function(){return this.init.prototype.extend(this)}},
-q=d.WordArray=n.extend({init:function(a,c){a=this.words=a||[];this.sigBytes=c!=j?c:4*a.length},toString:function(a){return(a||l).stringify(this)},concat:function(a){var c=this.words,p=a.words,f=this.sigBytes;a=a.sigBytes;this.clamp();if(f%4)for(var b=0;b<a;b++)c[f+b>>>2]|=(p[b>>>2]>>>24-8*(b%4)&255)<<24-8*((f+b)%4);else if(65535<p.length)for(b=0;b<a;b+=4)c[f+b>>>2]=p[b>>>2];else c.push.apply(c,p);this.sigBytes+=a;return this},clamp:function(){var a=this.words,c=this.sigBytes;a[c>>>2]&=4294967295<<
-32-8*(c%4);a.length=g.ceil(c/4)},clone:function(){var a=n.clone.call(this);a.words=this.words.slice(0);return a},random:function(a){for(var c=[],b=0;b<a;b+=4)c.push(4294967296*g.random()|0);return new q.init(c,a)}}),b=e.enc={},l=b.Hex={stringify:function(a){var c=a.words;a=a.sigBytes;for(var b=[],f=0;f<a;f++){var d=c[f>>>2]>>>24-8*(f%4)&255;b.push((d>>>4).toString(16));b.push((d&15).toString(16))}return b.join("")},parse:function(a){for(var c=a.length,b=[],f=0;f<c;f+=2)b[f>>>3]|=parseInt(a.substr(f,
-2),16)<<24-4*(f%8);return new q.init(b,c/2)}},k=b.Latin1={stringify:function(a){var c=a.words;a=a.sigBytes;for(var b=[],f=0;f<a;f++)b.push(String.fromCharCode(c[f>>>2]>>>24-8*(f%4)&255));return b.join("")},parse:function(a){for(var c=a.length,b=[],f=0;f<c;f++)b[f>>>2]|=(a.charCodeAt(f)&255)<<24-8*(f%4);return new q.init(b,c)}},h=b.Utf8={stringify:function(a){try{return decodeURIComponent(escape(k.stringify(a)))}catch(b){throw Error("Malformed UTF-8 data");}},parse:function(a){return k.parse(unescape(encodeURIComponent(a)))}},
-u=d.BufferedBlockAlgorithm=n.extend({reset:function(){this._data=new q.init;this._nDataBytes=0},_append:function(a){"string"==typeof a&&(a=h.parse(a));this._data.concat(a);this._nDataBytes+=a.sigBytes},_process:function(a){var b=this._data,d=b.words,f=b.sigBytes,l=this.blockSize,e=f/(4*l),e=a?g.ceil(e):g.max((e|0)-this._minBufferSize,0);a=e*l;f=g.min(4*a,f);if(a){for(var h=0;h<a;h+=l)this._doProcessBlock(d,h);h=d.splice(0,a);b.sigBytes-=f}return new q.init(h,f)},clone:function(){var a=n.clone.call(this);
-a._data=this._data.clone();return a},_minBufferSize:0});d.Hasher=u.extend({cfg:n.extend(),init:function(a){this.cfg=this.cfg.extend(a);this.reset()},reset:function(){u.reset.call(this);this._doReset()},update:function(a){this._append(a);this._process();return this},finalize:function(a){a&&this._append(a);return this._doFinalize()},blockSize:16,_createHelper:function(a){return function(b,d){return(new a.init(d)).finalize(b)}},_createHmacHelper:function(a){return function(b,d){return(new w.HMAC.init(a,
-d)).finalize(b)}}});var w=e.algo={};return e}(Math);
-(function(){var g=CryptoJS,j=g.lib,e=j.WordArray,d=j.Hasher,m=[],j=g.algo.SHA1=d.extend({_doReset:function(){this._hash=new e.init([1732584193,4023233417,2562383102,271733878,3285377520])},_doProcessBlock:function(d,e){for(var b=this._hash.words,l=b[0],k=b[1],h=b[2],g=b[3],j=b[4],a=0;80>a;a++){if(16>a)m[a]=d[e+a]|0;else{var c=m[a-3]^m[a-8]^m[a-14]^m[a-16];m[a]=c<<1|c>>>31}c=(l<<5|l>>>27)+j+m[a];c=20>a?c+((k&h|~k&g)+1518500249):40>a?c+((k^h^g)+1859775393):60>a?c+((k&h|k&g|h&g)-1894007588):c+((k^h^
-g)-899497514);j=g;g=h;h=k<<30|k>>>2;k=l;l=c}b[0]=b[0]+l|0;b[1]=b[1]+k|0;b[2]=b[2]+h|0;b[3]=b[3]+g|0;b[4]=b[4]+j|0},_doFinalize:function(){var d=this._data,e=d.words,b=8*this._nDataBytes,l=8*d.sigBytes;e[l>>>5]|=128<<24-l%32;e[(l+64>>>9<<4)+14]=Math.floor(b/4294967296);e[(l+64>>>9<<4)+15]=b;d.sigBytes=4*e.length;this._process();return this._hash},clone:function(){var e=d.clone.call(this);e._hash=this._hash.clone();return e}});g.SHA1=d._createHelper(j);g.HmacSHA1=d._createHmacHelper(j)})();
-(function(){var g=CryptoJS,j=g.enc.Utf8;g.algo.HMAC=g.lib.Base.extend({init:function(e,d){e=this._hasher=new e.init;"string"==typeof d&&(d=j.parse(d));var g=e.blockSize,n=4*g;d.sigBytes>n&&(d=e.finalize(d));d.clamp();for(var q=this._oKey=d.clone(),b=this._iKey=d.clone(),l=q.words,k=b.words,h=0;h<g;h++)l[h]^=1549556828,k[h]^=909522486;q.sigBytes=b.sigBytes=n;this.reset()},reset:function(){var e=this._hasher;e.reset();e.update(this._iKey)},update:function(e){this._hasher.update(e);return this},finalize:function(e){var d=
-this._hasher;e=d.finalize(e);d.reset();return d.finalize(this._oKey.clone().concat(e))}})})();
-(function(){var g=CryptoJS,j=g.lib,e=j.Base,d=j.WordArray,j=g.algo,m=j.HMAC,n=j.PBKDF2=e.extend({cfg:e.extend({keySize:4,hasher:j.SHA1,iterations:1}),init:function(d){this.cfg=this.cfg.extend(d)},compute:function(e,b){for(var g=this.cfg,k=m.create(g.hasher,e),h=d.create(),j=d.create([1]),n=h.words,a=j.words,c=g.keySize,g=g.iterations;n.length<c;){var p=k.update(b).finalize(j);k.reset();for(var f=p.words,v=f.length,s=p,t=1;t<g;t++){s=k.finalize(s);k.reset();for(var x=s.words,r=0;r<v;r++)f[r]^=x[r]}h.concat(p);
-a[0]++}h.sigBytes=4*c;return h}});g.PBKDF2=function(d,b,e){return n.create(e).compute(d,b)}})();
-    </script>
-    <script>
-        /*! srcdoc-polyfill - v0.1.1 - 2013-03-01
-        * http://github.com/jugglinmike/srcdoc-polyfill/
-        * Copyright (c) 2013 Mike Pennisi; Licensed MIT */
-        (function( window, document, undefined ) {
-	
-	        var idx, iframes;
-	        var _srcDoc = window.srcDoc;
-	        var isCompliant = !!("srcdoc" in document.createElement("iframe"));
-	        var implementations = {
-		        compliant: function( iframe, content ) {
+<br>
+<hr>
 
-			        if (content) {
-				        iframe.setAttribute("srcdoc", content);
-			        }
-		        },
-		        legacy: function( iframe, content ) {
 
-			        var jsUrl;
+    <!-- // INTERVIEWS \\ -->
+    <h5 class="headline">
+        <a id="interviews">Interviews</a></h5>
+    <div class="row">
+      <div class="col-lg-6">
+        <p class="desc" style="text-align: justify">In this episode, we interview Mr Jake Tan where he spoke about the importance of fire engineering. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. Place text here.</p>
+        <div><a href="interviews.html" class="btn">Listen to the interview here</a></div>
+      </div>
+      <div class="col-lg-6">
+        <a href="interviews.html"><img class="img-fluid rounded" src="http://placehold.it/700x300" alt=""></a>
+      </div>
+    </div>
+<br>
+    <hr>
 
-			        if (!iframe || !iframe.getAttribute) {
-				        return;
-			        }
 
-			        if (!content) {
-				        content = iframe.getAttribute("srcdoc");
-			        } else {
-				        iframe.setAttribute("srcdoc", content);
-			        }
+    <!-- // RESEARCH SECTION \\ -->
+<h5 class="headline">
+<a id="research">Research</a></h5>
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 portfolio-item ">
+        <div class="card h-100">
+          <a href="research.html"><img class="card-img-top" src="http://placehold.it/700x300" alt=""></a>
+          <div class="card-body">
+            <h6 class="card-title">
+              <div class="headline">Topic 1</div>
+            </h6>
+            <p class="card-text desc">Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. </p>
+            <div><a href="research.html" class="btn">Read more</a></div>
+          </div>
+        </div>
+      </div>
 
-			        if (content) {
-				        // The value returned by a script-targeted URL will be used as
-				        // the iFrame's content. Create such a URL which returns the
-				        // iFrame element's `srcdoc` attribute.
-				        jsUrl = "javascript: window.frameElement.getAttribute('srcdoc');";
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="research.html"><img class="card-img-top" src="http://placehold.it/700x300" alt=""></a>
+          <div class="card-body">
+            <h6 class="card-title">
+              <div class="headline">Topic 2</div>
+            </h6>
+            <p class="card-text desc">Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. </p>
+            <div><a href="research.html" class="btn">Read more</a></div>
+          </div>
+        </div>
+      </div>
 
-				        iframe.setAttribute("src", jsUrl);
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="research.html"><img class="card-img-top" src="http://placehold.it/700x300" alt=""></a>
+          <div class="card-body">
+            <h6 class="card-title">
+              <div class="headline">Topic 3</div>
+            </h6>
+            <p class="card-text desc">Place text here. Place text here. Place text here. Place text here. Place text here. Place text here. </p>
+            <div><a href="research.html" class="btn">Read more</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+<hr>
 
-				        // Explicitly set the iFrame's window.location for
-				        // compatability with IE9, which does not react to changes in
-				        // the `src` attribute when it is a `javascript:` URL, for
-				        // some reason
-				        if (iframe.contentWindow) {
-					        iframe.contentWindow.location = jsUrl;
-				        }
-			        }
-		        }
-	        };
-	        var srcDoc = window.srcDoc = {
-		        // Assume the best
-		        set: implementations.compliant,
-		        noConflict: function() {
-			        window.srcDoc = _srcDoc;
-			        return srcDoc;
-		        }
-	        };
 
-	        // If the browser supports srcdoc, no shimming is necessary
-	        if (isCompliant) {
-		        return;
-	        }
 
-	        srcDoc.set = implementations.legacy;
 
-	        // Automatically shim any iframes already present in the document
-	        iframes = document.getElementsByTagName("iframe");
-	        idx = iframes.length;
+    <!-- // FEATURED PROJECTS \\ -->
+<h5 class="headline">
+    <a id="featured-projects">Featured Projects</a></h5>
 
-	        while (idx--) {
-		        srcDoc.set( iframes[idx] );
-	        }
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="featured-projects.html"><img class="card-img-top" src="img/google-data-centre.png" alt=""></a>
+          <div class="card-body">
+            <p class="country headline">Singapore</p>
+            <h6 class="card-title">
+              <div class="headline">Google Data Centre</div>
+            </h6>
+            <p class="desc">Performance Based Solution | CFD | Egress Modelling</p>
+            <div><a href="featured-projects.html" class="btn">Learn more</a></div>
+          </div>
+        </div>
+      </div>
 
-        }( this, this.document ));
-    </script>
-    <script>
-        var pl = {"salt":"SR++h/ZuC2UBlOl9bOYtNhgpuurGqclkoaQ2/v+ZCTE=","iv":"+Y8lT8Jp6YgdKJ5Nm3MaiA==","data":"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"};
-        
-        var submitPass = document.getElementById('submitPass');
-        var passEl = document.getElementById('pass');
-        var invalidPassEl = document.getElementById('invalidPass');
-        var successEl = document.getElementById('success');
-        var contentFrame = document.getElementById('contentFrame');
-        
-        if (pl === "") {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-        }
-        
-        function doSubmit(evt) {
-            try {
-                var decrypted = decryptFile(CryptoJS.enc.Base64.parse(pl.data), passEl.value, CryptoJS.enc.Base64.parse(pl.salt), CryptoJS.enc.Base64.parse(pl.iv));
-                if (decrypted === "") throw "No data returned";
-                
-                // Set default iframe link targets to _top so all links break out of the iframe
-                decrypted = decrypted.replace("<head>", "<head><base href=\".\" target=\"_top\">");
-                
-                srcDoc.set(contentFrame, decrypted);
-                
-                successEl.style.display = "inline";
-                passEl.disabled = true;
-                submitPass.disabled = true;
-                setTimeout(function() {
-                    dialogWrap.style.display = "none";
-                }, 1000);
-            } catch (e) {
-                invalidPassEl.style.display = "inline";
-                passEl.value = "";
-            }
-        }
-        
-        submitPass.onclick = doSubmit;
-        passEl.onkeypress = function(e){
-            if (!e) e = window.event;
-            var keyCode = e.keyCode || e.which;
-            invalidPassEl.style.display = "none";
-            if (keyCode == '13'){
-              // Enter pressed
-              doSubmit();
-              return false;
-            }
-        }
-        
-        function decryptFile(contents, password, salt, iv) {
-            var _cp = CryptoJS.lib.CipherParams.create({
-                ciphertext: contents
-            });
-            var key = CryptoJS.PBKDF2(password, salt, { keySize: 256/32, iterations: 100 });
-            var decrypted = CryptoJS.AES.decrypt(_cp, key, {iv: iv});
-            
-            return decrypted.toString(CryptoJS.enc.Utf8);
-        }
-    </script>
-  </body>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="featured-projects.html"><img class="card-img-top" src="img/marina-bay-sands.png" alt=""></a>
+          <div class="card-body">
+            <p class="country headline">Singapore</p>
+            <h6 class="card-title">
+              <div class="headline">Marina Bay Sands</div>
+            </h6>
+            <p class="desc">Performance Based Solution | CFD | Egress Modelling</p>
+            <div><a href="featured-projects.html" class="btn">Learn more</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="featured-projects.html"><img class="card-img-top" src="img/pakistan-airport.png" alt=""></a>
+          <div class="card-body">
+            <p class="country headline">Pakistan</p>
+            <h6 class="card-title">
+              <div class="headline">New Islamabad International Airport</div>
+            </h6>
+            <p class="desc">Performance Based Solution | CFD | Egress Modelling</p>
+            <div><a href="featured-projects.html" class="btn">Learn more</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Call to Action Section -->
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <p></p>
+      </div>
+
+      <div class="col-md-4 text-right">
+        <h6 style="font-weight:bold;color:#666666;">Follow Us</h6>
+            <div class="contact">
+                <a href="#" target="_blank"><i class="fab fa-linkedin" id="linkedin-contact" style="font-size:23px;color:#EE3524;"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook" id="facebook-contact" style="font-size:23px;color:#EE3524;"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter" id="twitter-contact" style="font-size:23px;color:#EE3524;"></i></a>
+               <a href="#" target="_blank"><i class="fas fa-podcast" id="podcast-contact" style="font-size:23px;color:#EE3524;"></i></a>
+            </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!--// FOOTER \\ -->
+  <footer class="py-4">
+    <div class="container">
+      <p class="m-0 text-left text-black">&copy; 2020 SHEVS IFT</p>
+    </div>
+  </footer>
+
+
+</div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
